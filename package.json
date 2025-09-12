@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "aegis-oracle",
   "version": "1.0.0",
   "type": "module",
@@ -15,5 +16,21 @@
     "ethers": "^6.15.0",
     "express": "^5.1.0",
     "winston": "^3.17.0"
+=======
+  "name": "my-dapp",
+  "version": "1.0.0",
+  
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.10",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+>>>>>>> 9920b15edd418e32fc84fe0a499a72396d90e84c
   }
 }
