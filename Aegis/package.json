@@ -1,0 +1,37 @@
+{
+  "name": "aegis-unified",
+  "version": "1.0.0",
+  "description": "Aegis - Unified Security Oracle with Frontend and Smart Contracts",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:oracle\" \"npm run dev:hardhat\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:oracle": "cd oracle && npm run dev",
+    "dev:hardhat": "cd contracts && npm run node",
+    "build": "npm run build:contracts && npm run build:frontend",
+    "build:contracts": "cd contracts && npm run compile",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "npm run start:oracle & npm run start:frontend",
+    "start:frontend": "cd frontend && npm run start",
+    "start:oracle": "cd oracle && npm start",
+    "deploy": "cd contracts && npm run deploy",
+    "test": "cd contracts && npm run test",
+    "clean": "npm run clean:frontend && npm run clean:contracts",
+    "clean:frontend": "cd frontend && rm -rf .next",
+    "clean:contracts": "cd contracts && npm run clean",
+    "install:all": "npm install && cd frontend && npm install && cd ../contracts && npm install && cd ../oracle && npm install"
+  },
+  "keywords": ["blockchain", "security", "oracle", "ethereum", "defi"],
+  "author": "Aegis Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "frontend",
+    "contracts", 
+    "oracle"
+  ]
+}
+
