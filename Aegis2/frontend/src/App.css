@@ -1,0 +1,183 @@
+/* General App */
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.App-header {
+  background-color: #282c34;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App-header:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.App-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+}
+
+/* Link Styling */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #21a1f1;
+  text-decoration: underline;
+}
+
+/* Logo Animation */
+.App-logo {
+  height: 80px;
+  pointer-events: none;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Cards for transactions and actions */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Transaction/Action Info */
+.card div {
+  text-align: left;
+}
+
+.card strong {
+  font-weight: 600;
+}
+
+/* Highlighted flagged cards */
+.card.flagged {
+  background-color: #fff4f4;
+  border-left: 4px solid red;
+}
+
+/* Contract name badge */
+.contract-badge {
+  background: #ff4d4f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.contract-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Scrollable container for lists */
+.list-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Buttons */
+button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #a0c4f0;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 30px 15px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contract-badge {
+    margin-top: 10px;
+  }
+}

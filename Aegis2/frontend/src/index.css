@@ -1,0 +1,390 @@
+/* ---------------- Global Body ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Gradient background */
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #4facfe, #00d8fe);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional: overlay with subtle pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.03); /* subtle light overlay */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------------- Headings ---------------- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.2;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h1:hover {
+  transform: translateY(-3px);
+  color: #007bff;
+}
+
+/* ---------------- Paragraphs ---------------- */
+p {
+  margin: 0 0 1rem 0;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+p:hover {
+  transform: translateX(3px);
+}
+
+/* ---------------- Links ---------------- */
+a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #21a1f1;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* ---------------- Buttons ---------------- */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background-color: #61dafb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+button:disabled {
+  background-color: #a0c4f0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+/* ---------------- Code Blocks ---------------- */
+code {
+  font-family: 'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background: #e8e8e8;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+code:hover {
+  background: #dcdcdc;
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ---------------- Cards ---------------- */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ---------------- Flagged Cards ---------------- */
+.card.flagged {
+  background-color: #fff4f4;
+  border-left: 5px solid red;
+}
+
+/* ---------------- Contract Badge ---------------- */
+.contract-badge {
+  background: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.contract-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ---------------- Scrollable Containers ---------------- */
+.list-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* ---------------- Animations on Load ---------------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ---------------- App Logo ---------------- */
+.App-logo {
+  height: 80px;
+  pointer-events: none;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contract-badge {
+    margin-top: 10px;
+  }
+}
+/* ---------------- Container Sections ---------------- */
+.section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ---------------- Section Headers ---------------- */
+.section h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.section h2:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ---------------- Scrollable Lists ---------------- */
+.list-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #61dafb;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #21a1f1;
+}
+
+/* ---------------- Card Styles ---------------- */
+.card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.4s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeIn 0.5s forwards;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ---------------- Flagged/Suspicious Cards ---------------- */
+.card.flagged {
+  background: rgba(255, 77, 79, 0.15);
+  border-left: 5px solid #ff4d4f;
+}
+
+/* ---------------- Contract Badge ---------------- */
+.contract-badge {
+  background: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contract-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 10px rgba(255,77,79,0.7);
+}
+
+/* ---------------- Card Entry Animation ---------------- */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- Transaction Amount ---------------- */
+.amount {
+  font-weight: bold;
+  color: #61dafb;
+  transition: color 0.3s ease;
+}
+
+.card:hover .amount {
+  color: #21a1f1;
+  transform: scale(1.05);
+}
+
+/* ---------------- Action Type ---------------- */
+.action-type {
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* ---------------- Timestamp ---------------- */
+.timestamp {
+  font-size: 0.8rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.card:hover .timestamp {
+  color: #fff;
+}
+
+/* ---------------- Fade-In Utility Class ---------------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contract-badge {
+    margin-top: 10px;
+  }
+}
