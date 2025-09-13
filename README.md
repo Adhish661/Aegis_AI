@@ -1,5 +1,4 @@
-## Aegis2 is the latest integration version
-
+## Aegis2 is the latest updated directory
 
 
 # Sample Hardhat Project
